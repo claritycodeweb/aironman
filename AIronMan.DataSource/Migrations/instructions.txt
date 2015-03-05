@@ -1,0 +1,11 @@
+﻿------------------------------------------------------MIGRATIOS------------------------------------------------------
+> enable-migrations -contexttypename SchoolContext  --użycie tylko, włączenie migracji na klasie kontektowej, nalezy pamiętac o poprawnie skonfigurananych connectionstring
+
+> add-migration InitialCreate -StartUpProjectName "AIronMan.DataSource" --generacje pliku różnić
+
+> update-database -StartUpProjectName "AIronMan.DataSource" --nansienie zmian na db
+----------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------PACKAGE INSTALATIONs-----------------------------------------------
+>Install-Package EntityFramework -Version 5.0.0  --instalacjak pakietu entity framework w wersji 5.0.0 
+----------------------------------------------------------------------------------------------------------------------

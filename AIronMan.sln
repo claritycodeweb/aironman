@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIronMan.Api", "AIronMan.Api\AIronMan.Api.csproj", "{C6FE780B-2C5D-4642-BD0B-FCB613293DF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIronMan.DataSource", "AIronMan.DataSource\AIronMan.DataSource.csproj", "{9B1190C8-D663-4400-BA21-B70F89E9C9BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIronMan.Domain", "AIronMan.Domain\AIronMan.Domain.csproj", "{71AB38B8-A6DD-4D40-869C-E9176AB36033}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIronMan.Common", "AIronMan.Common\AIronMan.Common.csproj", "{7040C6A5-50B0-4428-AD69-2E9AFC703386}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIronMan.Utility", "AIronMan.Utility\AIronMan.Utility.csproj", "{16D3655C-CE0C-4929-9982-241369658C84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIronMan.Logging", "AIronMan.Logging\AIronMan.Logging.csproj", "{4BEBC422-91D9-4022-A614-163DAFB506F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIronMan.Services", "AIronMan.Services\AIronMan.Services.csproj", "{2788CE27-4FFF-4878-9C82-19028495AFB6}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "AIronMan.Front", "http://localhost:54984", "{E88B8C24-0A03-4975-9DC3-4F90DFA96653}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_54984"
+		Debug.AspNetCompiler.PhysicalPath = "AIronMan.Front\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54984\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_54984"
+		Release.AspNetCompiler.PhysicalPath = "AIronMan.Front\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54984\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "AIronMan.Front\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6FE780B-2C5D-4642-BD0B-FCB613293DF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6FE780B-2C5D-4642-BD0B-FCB613293DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6FE780B-2C5D-4642-BD0B-FCB613293DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6FE780B-2C5D-4642-BD0B-FCB613293DF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B1190C8-D663-4400-BA21-B70F89E9C9BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B1190C8-D663-4400-BA21-B70F89E9C9BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B1190C8-D663-4400-BA21-B70F89E9C9BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B1190C8-D663-4400-BA21-B70F89E9C9BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71AB38B8-A6DD-4D40-869C-E9176AB36033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71AB38B8-A6DD-4D40-869C-E9176AB36033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71AB38B8-A6DD-4D40-869C-E9176AB36033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71AB38B8-A6DD-4D40-869C-E9176AB36033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7040C6A5-50B0-4428-AD69-2E9AFC703386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7040C6A5-50B0-4428-AD69-2E9AFC703386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7040C6A5-50B0-4428-AD69-2E9AFC703386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7040C6A5-50B0-4428-AD69-2E9AFC703386}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16D3655C-CE0C-4929-9982-241369658C84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16D3655C-CE0C-4929-9982-241369658C84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16D3655C-CE0C-4929-9982-241369658C84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16D3655C-CE0C-4929-9982-241369658C84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BEBC422-91D9-4022-A614-163DAFB506F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BEBC422-91D9-4022-A614-163DAFB506F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BEBC422-91D9-4022-A614-163DAFB506F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BEBC422-91D9-4022-A614-163DAFB506F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2788CE27-4FFF-4878-9C82-19028495AFB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2788CE27-4FFF-4878-9C82-19028495AFB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2788CE27-4FFF-4878-9C82-19028495AFB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2788CE27-4FFF-4878-9C82-19028495AFB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E88B8C24-0A03-4975-9DC3-4F90DFA96653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E88B8C24-0A03-4975-9DC3-4F90DFA96653}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E88B8C24-0A03-4975-9DC3-4F90DFA96653}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{E88B8C24-0A03-4975-9DC3-4F90DFA96653}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
