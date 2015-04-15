@@ -100,8 +100,9 @@ app.controller('PageCtrl', function () {
         'angular-loading-bar',
 
         // Custom modules 
-        //'common',           // common functions, logger, spinner
-        //'common.bootstrap', // bootstrap dialog wrapper functions
+        'common',           // common functions, logger, spinner
+        'common.bootstrap', // bootstrap dialog wrapper functions
+        'translate',
 
         // 3rd Party Modules
         'ui.bootstrap'      // ui-bootstrap (ex: carousel, pagination, dialog)
@@ -111,4 +112,17 @@ app.controller('PageCtrl', function () {
     app.run(['$route', function ($route) {
         // Include $route to kick start the router.
     }]);
+
+    app.run(['$rootScope', function ($rootScope) {
+        $rootScope.page = {
+            setTitle: function (title) {
+                this.title = title + ' | Site Name';
+            }
+        }
+
+        $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+            $rootScope.page.setTitle(current.$$route.title || 'Default Title');
+        });
+    }]);
+
 })();

@@ -1,43 +1,51 @@
 ﻿<!DOCTYPE html>
 <html data-ng-app="app">
 <head>
-    <!-- Meta-Information -->
-    <title>IronMan</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="description" content="ACME Inc.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        .ng-hide {
+            display: none!important;
+        }
+    </style>
+    <title data-ng-bind="page.title">Hot Towel Angular</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
 
-    <!-- Vendor: Bootstrap Stylesheets http://getbootstrap.com -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    
-    
-    <link href="content/css/ie10mobile.css" rel="stylesheet" />
-    <link href="content/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="content/css/font-awesome.min.css" rel="stylesheet" />
-<!--    <link href="content/css/toastr.css" rel="stylesheet" />
-    <link href="content/css/customtheme.css" rel="stylesheet">-->
-<!--    <link href="content/css/styles.css" rel="stylesheet" />-->
+    <script>
+        // Must be first. IE10 mobile viewport fix
+        if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            var msViewportStyle = document.createElement("style");
+            var mq = "@-ms-viewport{width:auto!important}";
+            msViewportStyle.appendChild(document.createTextNode(mq));
+            document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+        }
+    </script>
 
-    <!-- Our Website CSS Styles -->
-    <link rel="stylesheet" href="content/css/main.css">
-
-    <!--    <base href="http://localhost/AIronMan.Web/" />-->
+    <link href="content/ie10mobile.css" rel="stylesheet" />
+    <link href="content/bootstrap.min.css" rel="stylesheet" />
+    <link href="content/font-awesome.min.css" rel="stylesheet" />
+    <link href="content/toastr.css" rel="stylesheet" />
+    <link href="content/customtheme.css" rel="stylesheet">
+    <link href="content/styles.css" rel="stylesheet" />
 </head>
 <body>
-    <!--[if lt IE 7]>
-    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-        your browser</a> to improve your experience.</p>
-    <![endif]-->
+    <div>
+        <div data-ng-include="'/app/layout/shell.html'"></div>
+        <div id="splash-page" data-ng-show="false">
+            <div class="page-splash">
+                <div class="page-splash-message">
+                    AIronMan
+                </div>
+                <div class="progress progress-striped active page-progress-bar">
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <div ng-include='"app/views/partial/header.html"'></div>
-    <div ng-view></div>
-    <div ng-include='"app/views/partial/footer.html"'></div>
-
-<!--    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>-->
+    <span data-cc-scroll-to-top></span>
 
     <!-- Vendor: Angular, followed by our custom Javascripts -->
     <!-- Vendor Scripts -->
@@ -57,15 +65,35 @@
     <!-- Load app main script -->
     <script src="app/app.js"></script>
     <script src="app/config.js"></script>
+    <script src="app/config.exceptionHandler.js"></script>
     <script src="app/config.route.js"></script>
+    
+        <!-- common Modules -->
+    <script src="app/common/common.js"></script>
+    <script src="app/common/logger.js"></script>
+    <script src="app/common/spinner.js"></script>
 
-    <!-- Load services -->
+    <!-- common.bootstrap Modules -->
+    <script src="app/common/bootstrap/bootstrap.dialog.js"></script>
+
+    <!-- app -->
+    <script src="app/admin/admin.js"></script>
+    <script src="app/dashboard/dashboard.js"></script>
+    <script src="app/sites/sites.js"></script>
+    <script src="app/layout/shell.js"></script>
+    <script src="app/layout/sidebar.js"></script>
+
+    <!-- app Services -->
+    <script src="app/services/datacontext.js"></script>
+    <script src="app/services/directives.js"></script>
     <script src="app/services/httpResponseInterceptorService.js"></script>
     <script src="app/services/accountService.js"></script>
 
     <!-- Load controllers -->
     <script src="app/controllers/accountController.js"></script>
-
+    
+    <script src="app/translate/resources.js"></script>
+    <script src="app/translate/translate.js"></script>
 
 </body>
 </html>

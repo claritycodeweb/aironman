@@ -4,8 +4,8 @@
     var app = angular.module('app');
 
     // Configure Toastr
-    //toastr.options.timeOut = 4000;
-    //toastr.options.positionClass = 'toast-bottom-right';
+    toastr.options.timeOut = 4000;
+    toastr.options.positionClass = 'toast-bottom-right';
 
     // For use with the HotTowel-Angular-Breeze add-on that uses Breeze
     var remoteServiceName = 'breeze/Breeze';
@@ -20,7 +20,8 @@
         docTitle: 'HotTowel: ',
         events: events,
         remoteServiceName: remoteServiceName,
-        version: '2.1.0'
+        version: '2.1.0',
+        currentLanguage: 'en'
     };
 
     app.value('config', config);
@@ -29,17 +30,17 @@
         $httpProvider.interceptors.push('httpResponseInterceptorService');
     });
 
-    //app.config(['$logProvider', function ($logProvider) {
-    //    // turn debugging off/on (no info or warn)
-    //    if ($logProvider.debugEnabled) {
-    //        $logProvider.debugEnabled(true);
-    //    }
-    //}]);
+    app.config(['$logProvider', function ($logProvider) {
+        // turn debugging off/on (no info or warn)
+        if ($logProvider.debugEnabled) {
+            $logProvider.debugEnabled(true);
+        }
+    }]);
 
-    ////#region Configure the common services via commonConfig
-    //app.config(['commonConfigProvider', function (cfg) {
-    //    cfg.config.controllerActivateSuccessEvent = config.events.controllerActivateSuccess;
-    //    cfg.config.spinnerToggleEvent = config.events.spinnerToggle;
-    //}]);
-    //#endregion
+    //#region Configure the common services via commonConfig
+    app.config(['commonConfigProvider', function (cfg) {
+        cfg.config.controllerActivateSuccessEvent = config.events.controllerActivateSuccess;
+        cfg.config.spinnerToggleEvent = config.events.spinnerToggle;
+    }]);
+
 })();

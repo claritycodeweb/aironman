@@ -20,14 +20,13 @@
         });
     }
 
-    // Define the routes 
+    // Define the routes
     function getRoutes() {
         return [
             {
                 url: '/',
                 config: {
-                    templateUrl: "app/views/home.html",
-                    controller: "PageCtrl",
+                    templateUrl: 'app/dashboard/dashboard.html',
                     title: 'dashboard',
                     settings: {
                         nav: 1,
@@ -35,36 +34,25 @@
                     }
                 }
             }, {
-                url: '/login',
+                url: '/sites',
                 config: {
-                    title: 'admin',
-                    controller: "loginController",
-                    templateUrl: "/app/views/account/login.html",
+                    title: 'sites',
+                    templateUrl: "app/sites/sites.html",
+                    controller: "PageCtrl",
                     settings: {
                         nav: 2,
-                        content: '<i class="fa fa-lock"></i> Admin'
+                        content: '<i class="fa fa-lock"></i> Sites'
                     }
                 }
             }, {
-                url: '/about',
+                url: '/settings',
                 config: {
-                    title: 'about',
-                    templateUrl: "app/views/about.html",
+                    title: 'settings',
+                    templateUrl: "app/views/settings.html",
                     controller: "PageCtrl",
                     settings: {
                         nav: 3,
-                        content: '<i class="fa fa-lock"></i> Admin'
-                    }
-                }
-            }, {
-                url: '/faq',
-                config: {
-                    title: 'faq',
-                    templateUrl: "app/views/faq.html",
-                    controller: "PageCtrl",
-                    settings: {
-                        nav: 4,
-                        content: '<i class="fa fa-lock"></i> Admin'
+                        content: '<i class="fa fa-lock"></i> Settings'
                     }
                 }
             }, {
@@ -74,19 +62,8 @@
                     templateUrl: "app/views/pricing.html",
                     controller: "PageCtrl",
                     settings: {
-                        nav: 5,
-                        content: '<i class="fa fa-lock"></i> Admin'
-                    }
-                }
-            }, {
-                url: '/admin',
-                config: {
-                    title: 'admin',
-                    templateUrl: "app/admin/views/index.html",
-                    controller: "PageCtrl",
-                    settings: {
-                        nav: 6,
-                        content: '<i class="fa fa-lock"></i> Admin'
+                        nav: 4,
+                        content: '<i class="fa fa-lock"></i> Pricing'
                     }
                 }
             }, {
@@ -96,8 +73,8 @@
                     templateUrl: "app/views/contact.html",
                     controller: "PageCtrl",
                     settings: {
-                        nav: 7,
-                        content: '<i class="fa fa-lock"></i> Admin'
+                        nav: 5,
+                        content: '<i class="fa fa-lock"></i> Contact'
                     }
                 }
             }, {
@@ -107,8 +84,8 @@
                     templateUrl: "app/views/blog.html",
                     controller: "BlogCtrl",
                     settings: {
-                        nav: 8,
-                        content: '<i class="fa fa-lock"></i> Admin'
+                        nav: 6,
+                        content: '<i class="fa fa-lock"></i> Blog'
                     }
                 }
             }, {
@@ -118,7 +95,17 @@
                     templateUrl: "app/views/blog_item.html",
                     controller: "BlogCtrl",
                     settings: {
-                        nav: 9,
+                        nav: 7,
+                        content: '<i class="fa fa-lock"></i> Posts'
+                    }
+                }
+            }, {
+                url: '/admin',
+                config: {
+                    title: 'admin',
+                    templateUrl: 'app/admin/admin.html',
+                    settings: {
+                        nav: 8,
                         content: '<i class="fa fa-lock"></i> Admin'
                     }
                 }
