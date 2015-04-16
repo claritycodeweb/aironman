@@ -3,14 +3,16 @@
         'TITLE': 'Hello',
         'SUB_TITLE': 'Hello 2',
         'SUB.SUB.TITLE': 'Hello 3',
-        'FOO': 'This is a paragraph'
+        'FOO': 'This is a paragraph',
+        'LOGOUT': "Logout"
     }
     ,
     'pl': {
         'TITLE': 'Czesc',
         'SUB_TITLE': 'Czesc 2',
         'SUB.SUB.TITLE': 'Czesc 3',
-        'FOO': 'To jest paragraf'
+        'FOO': 'To jest paragraf',
+        'LOGOUT': "Wyloguj"
     }
     ,
     'cs': {

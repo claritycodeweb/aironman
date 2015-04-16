@@ -27,7 +27,11 @@
                 // This is where we will add more functionality
                 // once we start to do something more than
                 // simply look up a label.
-                return tables[currentLanguage][label];
+                var res = tables[currentLanguage][label];
+                if (res) {
+                    return res;
+                }
+                return "ERROR#" + currentLanguage + "#" + label + "#";
             }
         };
     });

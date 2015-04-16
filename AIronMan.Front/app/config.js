@@ -21,6 +21,7 @@
         events: events,
         remoteServiceName: remoteServiceName,
         version: '2.1.0',
+        apiServiceBaseUri: 'http://localhost/AIronMan.Api',
         currentLanguage: 'en'
     };
 

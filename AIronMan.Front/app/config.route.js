@@ -109,6 +109,17 @@
                         content: '<i class="fa fa-lock"></i> Admin'
                     }
                 }
+            }, {
+                url: '/login',
+                config: {
+                    title: 'login',
+                    templateUrl: "app/authentication/views/login.html",
+                    controller: "authController",
+                    settings: {
+                        nav: 9,
+                        content: '<i class="fa fa-lock"></i> LOGIN'
+                    }
+                }
             }
         ];
     }

@@ -103,7 +103,7 @@ app.controller('PageCtrl', function () {
         'common',           // common functions, logger, spinner
         'common.bootstrap', // bootstrap dialog wrapper functions
         'translate',
-
+        'authentication',
         // 3rd Party Modules
         'ui.bootstrap'      // ui-bootstrap (ex: carousel, pagination, dialog)
     ]);
