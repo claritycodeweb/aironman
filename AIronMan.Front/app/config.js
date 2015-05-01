@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    var app = angular.module('app');
+    var app = angular.module('app.ironman');
 
     // Configure Toastr
     toastr.options.timeOut = 4000;
@@ -20,9 +20,9 @@
         docTitle: 'HotTowel: ',
         events: events,
         remoteServiceName: remoteServiceName,
-        version: '2.1.0',
-        apiServiceBaseUri: 'http://localhost/AIronMan.Api',
-        currentLanguage: 'en'
+        version: '0.0.1',
+        apiServiceBaseUri: 'http://localhost/AIronMan.Api/Api',
+        currentLanguage: 'pl'
     };
 
     app.value('config', config);
@@ -44,4 +44,7 @@
         cfg.config.spinnerToggleEvent = config.events.spinnerToggle;
     }]);
 
+    app.run(['translateService', function (translateService) {
+        translateService.setCurrentLanguage(config.currentLanguage);
+    }]);
 })();

@@ -1,5 +1,7 @@
 ﻿'use strict';
-angular.module('app').factory('httpResponseInterceptorService', ['$q', '$injector', '$location', 'localStorageService', function ($q, $injector, $location, localStorageService) {
+angular
+    .module('app.ironman')
+    .factory('httpResponseInterceptorService', ['$q', '$injector', '$location', 'localStorageService', function ($q, $injector, $location, localStorageService) {
 
     var authInterceptorServiceFactory = {};
 
@@ -17,15 +19,14 @@ angular.module('app').factory('httpResponseInterceptorService', ['$q', '$injecto
 
     var _responseError = function (rejection) {
         if (rejection.status === 401) {
-            var authService = $injector.get('accountService');
-            var authData = localStorageService.get('authorizationData');
 
-            if (authData) {
-                if (authData.useRefreshTokens) {
-                    $location.path('/refresh');
-                    return $q.reject(rejection);
-                }
+            if ((rejection.data.code) && (rejection.data.code = 100)) {
+                //Case that OTP is not valid but access token is valid
+                return $q.reject(rejection);
             }
+
+            var authService = $injector.get('authService');
+
             authService.logOut();
             $location.path('/login');
         }

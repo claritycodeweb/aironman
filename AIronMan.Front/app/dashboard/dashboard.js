@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
     var controllerId = 'dashboard';
-    angular.module('app').controller(controllerId, ['common', 'datacontext', dashboard]);
+    angular.module('app.ironman').controller(controllerId, ['common', 'datacontext', dashboard]);
 
     function dashboard(common, datacontext) {
         var getLogFn = common.logger.getLogFn;

@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
     var controllerId = 'sites';
-    angular.module('app').controller(controllerId, ['common', sites]);
+    angular.module('app.ironman').controller(controllerId, ['common', sites]);
 
     function sites(common) {
         var getLogFn = common.logger.getLogFn;

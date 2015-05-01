@@ -1,9 +1,15 @@
-﻿'use strict';
-angular.module('authentication')
+﻿(function() {
+    'use strict';
 
-    .controller('authController',
-    ['$scope', '$location', 'authService',
-    function ($scope, $location, authService) {
+    var controllerId = 'authController';
+
+    angular.module('authentication')
+        .controller(controllerId, ['$scope', '$location', 'common', 'authService', authentication]);
+
+    function authentication($scope, $location, common, authService) {
+
+        var getLogFn = common.logger.getLogFn;
+        var log = getLogFn(controllerId);
 
         $scope.loginData = {
             userName: "",
@@ -12,16 +18,25 @@ angular.module('authentication')
 
         $scope.message = "";
 
-        $scope.login = function () {
+        $scope.login = function() {
 
-            authService.login($scope.loginData).then(function (response) {
+            authService.login($scope.loginData).then(function(response) {
 
-                $location.path('/transhistory');
+                    //$location.path('/transhistory');
 
-            },
-             function (err) {
-                 $scope.message = err.error_description;
-             });
+                },
+                function (err) {
+                    console.log("erro login method in authcontroller");
+                    $scope.message = err;
+                });
         };
 
-    }]);
+        activate();
+
+        function activate() {
+            common.activateController([], controllerId)
+                .then(function() { log('Activated Login View'); });
+        }
+
+    };
+})();

@@ -31,6 +31,8 @@ namespace AIronMan.DataSource {
         public DbSet<Lang> Langs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder) {
+            Database.SetInitializer<AIronMan.DataSource.DB>(null);
+
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
             modelBuilder.Entity<Post>().HasRequired(p => p.Blog)

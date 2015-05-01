@@ -1,7 +1,7 @@
 ﻿(function() {
     'use strict';
 
-    var app = angular.module('app');
+    var app = angular.module('app.ironman');
 
     app.directive('ccImgPerson', ['config', function (config) {
         //Usage:
@@ -190,7 +190,7 @@
                 'rightText': '@',
                 'allowCollapse': '@'
             },
-            templateUrl: '/app/layout/widgetheader.html',
+            templateUrl: 'app/layout/widgetheader.html',
             restrict: 'A',
         };
         return directive;
@@ -199,4 +199,10 @@
             attrs.$set('class', 'widget-head');
         }
     });
+
+    app.directive('appVersion', ['config', function (config) {
+        return function (scope, element, attrs) {
+            element.text(config.version);
+        }
+    }]);
 })();

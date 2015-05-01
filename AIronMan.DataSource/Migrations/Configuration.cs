@@ -16,6 +16,7 @@ namespace AIronMan.DataSource.Migrations
             //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DataContext>());
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = true; */
+            Database.SetInitializer<AIronMan.DataSource.DB>(null);
             AutomaticMigrationsEnabled = false;
         }
 

@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    var app = angular.module('app');
+    var app = angular.module('app.ironman');
 
     // Collect the routes
     app.constant('routes', getRoutes());
@@ -31,14 +31,23 @@
                     settings: {
                         nav: 1,
                         content: '<i class="fa fa-dashboard"></i> Dashboard'
-                    }
+                    },
+                    /*resolve: {
+                        factory: function ($q, $rootScope, $location) {
+                            var defer = $q.defer();
+                            if ($rootScope.currentUser == undefined) {
+                                $location.path('/login');
+                            };
+                            defer.resolve();
+                            return defer.promise;
+                        }
+                    }*/
                 }
             }, {
                 url: '/sites',
                 config: {
                     title: 'sites',
                     templateUrl: "app/sites/sites.html",
-                    controller: "PageCtrl",
                     settings: {
                         nav: 2,
                         content: '<i class="fa fa-lock"></i> Sites'
@@ -123,4 +132,12 @@
             }
         ];
     }
+
+    var checkRouting = function ($q, $rootScope, authService, $location) {
+        if (authService.authentication.isAuth) {
+            return true;
+        } else {
+            $location.path("/login");
+        }
+    };
 })();

@@ -11,7 +11,7 @@ namespace AIronMan.DataSource.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201503041910161_InitialCreate"; }
+            get { return "201504170935467_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

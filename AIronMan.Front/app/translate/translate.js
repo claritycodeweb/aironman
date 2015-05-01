@@ -4,7 +4,7 @@
     // in our main application module.
     var translate = angular.module('translate', []);
 
-    translate.factory('translateService', function () {
+    translate.factory('translateService', ['localStorageService', function (localStorageService) {
         // This function will be executed once. We use it as
         // a scope to keep our current language in (thus avoiding
         // the ugly use of root scope).
@@ -34,7 +34,7 @@
                 return "ERROR#" + currentLanguage + "#" + label + "#";
             }
         };
-    });
+    }]);
 
     // The filter itself has now a very short definition; it simply
     // acts as a proxy to the xlatService's xlat function.
@@ -43,13 +43,4 @@
             return translateService.translate(label);
         };
     }]);
-
-    angular.module('app').controller('LangController', ['$scope', 'translateService',
-        function ($scope, translateService) {
-            // So we can create a $scope function that can be linked
-            // to the click of a change-language button.
-            $scope.setCurrentLanguage = function (language) {
-                translateService.setCurrentLanguage(language);
-            };
-        }]);
 }())

@@ -5,8 +5,11 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
+using AIronMan.Api.Filters;
+
 namespace AIronMan.Api.Controllers
 {
+    [AuthToken]
     public class Default1Controller : ApiController
     {
         // GET api/default1

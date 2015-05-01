@@ -2,7 +2,7 @@
     'use strict';
     
     var controllerId = 'sidebar';
-    angular.module('app').controller(controllerId,
+    angular.module('app.ironman').controller(controllerId,
         ['$route', 'config', 'routes', sidebar]);
 
     function sidebar($route, config, routes) {
