@@ -16,8 +16,8 @@
     };
 
     var config = {
-        appErrorPrefix: '[HT Error] ', //Configure the exceptionHandler decorator
-        docTitle: 'HotTowel: ',
+        appErrorPrefix: '[AIron Error] ', //Configure the exceptionHandler decorator
+        docTitle: 'AIronMan: ',
         events: events,
         remoteServiceName: remoteServiceName,
         version: '0.0.1',

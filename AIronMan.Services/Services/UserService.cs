@@ -179,5 +179,25 @@ namespace AIronMan.Services
             status = ErrorCode.AccountServiceStatus.InvalidPassword;
             return null;
         }
+
+        public IEnumerable<User> GetAllActiveCacheUsers()
+        {
+            var users = Cache.Get("ActiveUser") as IEnumerable<User>;
+
+            // If it's not in the cache, we need to read it from the repository
+            if (users == null)
+            {
+                // Get the repository data
+                users = Context.UserRepository.Filter(m=>m.IsApproved && m.IsLockedOut == false).ToList();
+
+                if (users.Any())
+                {
+                    // Put this data into the cache for 30 minutes
+                    Cache.Set("ActiveUser", users, 1440);
+                }
+            }
+
+            return users;
+        }
     }
 }

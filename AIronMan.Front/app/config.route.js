@@ -14,9 +14,10 @@
             $routeProvider.when(r.url, r.config);
         });
         $routeProvider.otherwise({
+
             redirectTo: '/404',
-            templateUrl: "app/views/error/404.html",
-            controller: "PageCtrl"
+
+            //controller: "PageCtrl"
         });
     }
 
@@ -123,13 +124,19 @@
                 config: {
                     title: 'login',
                     templateUrl: "app/authentication/views/login.html",
-                    controller: "authController",
+                    controller: "authCtrl",
                     settings: {
                         nav: 9,
                         content: '<i class="fa fa-lock"></i> LOGIN'
                     }
                 }
-            }
+            }, /*{
+                url: '/404',
+                config: {
+                    title: '404',
+                    templateUrl: "app/views/error/404.html",
+                }
+            },*/
         ];
     }
 

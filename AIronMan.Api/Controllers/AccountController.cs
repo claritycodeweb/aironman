@@ -5,8 +5,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading;
+using System.Web;
 using System.Web.Http;
 using System.Threading.Tasks;
+using System.Web.Security;
+using System.Web.UI.WebControls;
 
 using AIronMan.Api.Common.Result;
 using AIronMan.Api.Filters;
@@ -46,19 +49,9 @@ namespace AIronMan.Api.Controllers
 
                 User user = userServices.ValidateUser(viewModel.UserName, viewModel.Password, true, ref loginStaus);
 
-                var isAuth = new Authenticate().IsAuthenticate();
-
                 if (loginStaus == ErrorCode.AccountServiceStatus.Success)
                 {
-                    new Authenticate().SignIn(user);
-                    //FormsAuthentication.SetAuthCookie(user.Email, true);
-                    var ticket = new TicketHandler();
-                    ticket.SetTicket(user.UserName, new NameValueCollection {
-                        { "UserId", user.Id.ToString() },
-                        { "UserName", user.UserName },
-                        { "UserEmail", user.Email }
-                    });
-                    return Ok(new { Success = true, Content = "Udalo sie", Token = Guid.NewGuid().ToString() });
+                    return Ok(new { Success = true, Content = "Udalo sie", Token = Utility.Token.CreateToken(user.UserName, user.Id) });
                 }
                 ModelState.AddModelError("", ErrorCodeString.AccountServiceStatusString(loginStaus));
 

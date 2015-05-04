@@ -1,7 +1,7 @@
-﻿(function() {
+﻿(function () {
     'use strict';
 
-    var controllerId = 'authController';
+    var controllerId = 'authCtrl';
 
     angular.module('authentication')
         .controller(controllerId, ['$scope', '$location', 'common', 'authService', authentication]);
@@ -18,15 +18,14 @@
 
         $scope.message = "";
 
-        $scope.login = function() {
+        $scope.login = function () {
 
-            authService.login($scope.loginData).then(function(response) {
+            authService.login($scope.loginData)
+                .then(function (response) {
 
-                    //$location.path('/transhistory');
-
+                    $location.path('/');
                 },
                 function (err) {
-                    console.log("erro login method in authcontroller");
                     $scope.message = err;
                 });
         };
@@ -35,7 +34,7 @@
 
         function activate() {
             common.activateController([], controllerId)
-                .then(function() { log('Activated Login View'); });
+                .then(function () { log('Activated Login View'); });
         }
 
     };

@@ -11,7 +11,7 @@ angular
 
         var authData = localStorageService.get('authorizationData');
         if (authData) {
-            config.headers.Authorization = 'Bearer ' + authData.token;
+            config.headers.Authorization = authData.token;
         }
 
         return config;

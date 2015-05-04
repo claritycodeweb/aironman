@@ -43,7 +43,6 @@
             $rootScope.page.setTitle(current.$$route.title || 'Default Title');
         });
 
-        
         // register listener to watch route changes
         $rootScope.$on("$locationChangeStart", function (event, next, current) {
             if (!authService.authentication.isAuth) {
@@ -52,6 +51,7 @@
                     // already going to #login, no redirect needed
                 } else {
                     // not going to #login, we should redirect now
+                    //console.log("redirect to login");
                     $location.path("/login");
                 }
             }

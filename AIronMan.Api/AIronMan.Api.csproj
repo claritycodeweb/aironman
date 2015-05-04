@@ -125,10 +125,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\Authenticate.cs" />
     <Compile Include="Infrastructure\FormsAuthenticationExtensions.cs" />
     <Compile Include="Infrastructure\FormsAuthenticationTicketExtensions.cs" />
     <Compile Include="Infrastructure\TicketHandler.cs" />
+    <Compile Include="Infrastructure\Token.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -156,6 +156,10 @@
     <ProjectReference Include="..\AIronMan.Services\AIronMan.Services.csproj">
       <Project>{2788ce27-4fff-4878-9c82-19028495afb6}</Project>
       <Name>AIronMan.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AIronMan.Utility\AIronMan.Utility.csproj">
+      <Project>{16d3655c-ce0c-4929-9982-241369658c84}</Project>
+      <Name>AIronMan.Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
