@@ -12,7 +12,6 @@ using System.Web.Http.Filters;
 using AIronMan.Api.Common.Result;
 using AIronMan.Services;
 
-using Microsoft.Practices.ObjectBuilder2;
 using Microsoft.Practices.Unity;
 
 namespace AIronMan.Api.Filters
@@ -25,23 +24,6 @@ namespace AIronMan.Api.Filters
         public AuthToken()
         {
             this.userService = (IUserService)GlobalConfiguration.Configuration.DependencyResolver.GetService(typeof(IUserService));
-        }
-
-        public bool ValidateToken(string token)
-        {
-            var formAuthentication = Utility.Token.DecryptToken(token);
-
-            if (formAuthentication != null)
-            {
-                var users = userService.GetAllActiveCacheUsers();
-
-                if (users.FirstOrDefault(m => m.UserName.ToLower() == formAuthentication.Name.ToLower()) != null)
-                {
-                    return true;
-                }
-            }
-
-            return false;
         }
 
         public override void OnActionExecuting(HttpActionContext context)
@@ -60,11 +42,11 @@ namespace AIronMan.Api.Filters
             }
             else
             {
-                if (!this.ValidateToken(header.Value.SingleOrDefault()))
+                if (!this.userService.ValidateToken(header.Value.SingleOrDefault()))
                 {
                     context.Response = new HttpResponseMessage
                     {
-                        Content = new StringContent("UserName provided is not authorized"),
+                        Content = new StringContent("Invalid Token"),
                         StatusCode = HttpStatusCode.Unauthorized,
                         RequestMessage = context.Request,
                     };

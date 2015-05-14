@@ -81,7 +81,6 @@
                 config: {
                     title: 'contact',
                     templateUrl: "app/views/contact.html",
-                    controller: "PageCtrl",
                     settings: {
                         nav: 5,
                         content: '<i class="fa fa-lock"></i> Contact'
@@ -130,13 +129,13 @@
                         content: '<i class="fa fa-lock"></i> LOGIN'
                     }
                 }
-            }, /*{
+            }, {
                 url: '/404',
                 config: {
                     title: '404',
                     templateUrl: "app/views/error/404.html",
                 }
-            },*/
+            }
         ];
     }
 

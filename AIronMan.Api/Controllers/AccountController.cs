@@ -61,19 +61,21 @@ namespace AIronMan.Api.Controllers
                 //    ReasonPhrase = "Product ID Not Found"
                 //};
 
-                return new HttpActionResult(HttpStatusCode.BadRequest, "User Name or Password is incorrect", Request);
+                //return new HttpActionResult(HttpStatusCode.BadRequest, "User Name or Password is incorrect", Request);
 
                 //throw new HttpResponseException(resp);
                 //return Json(new { success = false, message = "User code or password is incorrect" });
                 //return Ok(new { success = false, message = "User code or password is incorrect" });
             }
 
-            return Ok(new { success = true, message = "ok" });
+            return new HttpActionResult(HttpStatusCode.BadRequest, "User Name or Password is incorrect", Request);
         }
 
-        [AuthToken]
-        public IHttpActionResult GetStart()
+        //[AuthToken]
+        [HttpGet]
+        public IHttpActionResult WarmUp()
         {
+            userServices.GetUser();
             return this.Ok(new { sucess = true });
         }
     }

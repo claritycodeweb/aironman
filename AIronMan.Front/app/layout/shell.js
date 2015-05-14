@@ -35,15 +35,21 @@
         }
 
         $rootScope.$on('$routeChangeStart',
-            function (event, next, current) { toggleSpinner(true); }
+            function(event, next, current) {
+                 toggleSpinner(true);
+            }
         );
 
         $rootScope.$on(events.controllerActivateSuccess,
-            function (data) { toggleSpinner(false); }
+            function(data) {
+                 toggleSpinner(false);
+            }
         );
 
         $rootScope.$on(events.spinnerToggle,
-            function (data) { toggleSpinner(data.show); }
+            function(data) {
+                 toggleSpinner(data.show);
+            }
         );
     };
 })();

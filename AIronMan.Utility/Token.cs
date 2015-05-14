@@ -14,7 +14,7 @@ namespace AIronMan.Utility
                 1,
                 userName,
                 DateTime.Now,
-                DateTime.Now.AddMinutes(360),
+                DateTime.Now.AddMinutes(12*60),
                 true,
                 string.Join(",", userName + "," + userId)
                 );
@@ -26,9 +26,16 @@ namespace AIronMan.Utility
 
         public static FormsAuthenticationTicket DecryptToken(string token)
         {
-            if (token != null)
+            try
             {
-                return FormsAuthentication.Decrypt(token);
+                if (token != null)
+                {
+                    return FormsAuthentication.Decrypt(token);
+                }
+            }
+            catch (ArgumentException e)
+            {
+                return null;
             }
 
             return null;

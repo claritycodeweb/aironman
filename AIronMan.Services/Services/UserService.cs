@@ -199,5 +199,23 @@ namespace AIronMan.Services
 
             return users;
         }
+
+        public bool ValidateToken(string token)
+        {
+            var formAuthentication =Utility.Token.DecryptToken(token);
+
+            if (formAuthentication != null)
+            {
+                var users = GetAllActiveCacheUsers();
+
+                // user from Token exists and is not expired
+                if (users.FirstOrDefault(m => m.UserName.ToLower() == formAuthentication.Name.ToLower()) != null && !formAuthentication.Expired)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }

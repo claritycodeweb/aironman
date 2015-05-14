@@ -74,7 +74,7 @@ input.form-control,
 select.form-control,
 textarea.form-control {
     /*width: 205px;*/
-    width: 60%;
+    /*width: 60%;*/
     display: inline;
     display: block;
 }
@@ -103,8 +103,8 @@ textarea.form-control {
 }
 
 .btn {
-    margin-right: 4px;
-    margin-left: 4px;
+    /*margin-right: 4px;
+    margin-left: 4px;*/
 }
 
     .btn.btn-notext > i {
@@ -511,8 +511,8 @@ a {
         }
 
     .btn {
-        margin: .2em;
-        width: 7em;
+        /*margin: .2em;
+        width: 7em;*/
     }
 
     .btn-group > .btn {
@@ -526,7 +526,7 @@ a {
 
     input,
     select {
-        width: 85% !important;
+        /*width: 85% !important;*/
     }
 
     textarea {

@@ -19,8 +19,8 @@ namespace AIronMan.Services
         protected UnitOfWork Context;
         protected ILogger Logger;
         protected ICacheProvider Cache;
-        protected string Token;
-        protected FormsAuthenticationTicket Ticket;
+        protected readonly string Token;
+        protected readonly FormsAuthenticationTicket TokenTicket;
 
         protected ServiceBase(UnitOfWork context, ICacheProvider cache, ILogger logger)
         {
@@ -29,8 +29,7 @@ namespace AIronMan.Services
             Logger = logger;
 
             Token = HttpContext.Current.Request.Headers.Get("Authorization");
-
-            Ticket = Utility.Token.DecryptToken(Token);
+            TokenTicket = Utility.Token.DecryptToken(Token);
         }
 
 
@@ -42,7 +41,7 @@ namespace AIronMan.Services
             {
                 if (!String.IsNullOrEmpty(Token))
                 {
-                    return this.Ticket.Name;
+                    return this.TokenTicket.Name;
                 }
                 return "";
             }
@@ -54,7 +53,7 @@ namespace AIronMan.Services
             {
                 if (!String.IsNullOrEmpty(Token))
                 {
-                    return int.Parse(this.Ticket.UserData.Split(',')[1]);
+                    return int.Parse(this.TokenTicket.UserData.Split(',')[1]);
                 }
                 return 0;
             }

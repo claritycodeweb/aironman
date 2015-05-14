@@ -1039,6 +1039,31 @@ form {
     margin: 5px;
 }
 
+/* Signin Page*/
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+}
+    .form-signin input {
+        padding: 10px !important;
+    }
+
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px ;
+  font-size: 16px;
+}
+
 /* Responsive */
 
 @media (max-width: 480px) {

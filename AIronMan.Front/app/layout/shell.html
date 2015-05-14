@@ -1,5 +1,5 @@
 ﻿<div data-ng-controller="shell as vm">
-    <header class="clearfix">
+    <header ng-if="top.authentication.isAuth" class="clearfix">
         <div data-ng-include="'app/layout/topnav.html'"></div>
     </header>
     <section id="content" class="content">
@@ -8,7 +8,7 @@
             <div class="page-splash-message page-splash-message-subtle">{{vm.busyMessage}}</div>
         </div>
 
-        <div data-ng-include="'app/layout/sidebar.html'"></div>
+        <div ng-if="top.authentication.isAuth" data-ng-include="'app/layout/sidebar.html'"></div>
 
         <div data-ng-view class="shuffle-animation"></div>
     </section>

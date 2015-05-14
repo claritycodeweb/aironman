@@ -4,9 +4,9 @@
     var controllerId = 'authCtrl';
 
     angular.module('authentication')
-        .controller(controllerId, ['$scope', '$location', 'common', 'authService', authentication]);
+        .controller(controllerId, ['$scope', '$location',  '$filter', 'common', 'authService', authentication]);
 
-    function authentication($scope, $location, common, authService) {
+    function authentication($scope, $location, $filter, common, authService) {
 
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
@@ -18,16 +18,21 @@
 
         $scope.message = "";
 
-        $scope.login = function () {
+        $scope.login = function (isValid) {
 
-            authService.login($scope.loginData)
-                .then(function (response) {
+            if (isValid) {
+                $scope.message = "Validation";
+                authService.login($scope.loginData)
+                    .then(function(response) {
 
-                    $location.path('/');
-                },
-                function (err) {
-                    $scope.message = err;
-                });
+                            $location.path('/');
+                        },
+                        function(err) {
+                            $scope.message = err;
+                        });
+            } else {
+                $scope.message = $filter('translate')('MSG_UserNameAndPassowrdArRequired');
+            }
         };
 
         activate();
