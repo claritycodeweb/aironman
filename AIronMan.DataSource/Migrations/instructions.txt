@@ -9,3 +9,7 @@
 ------------------------------------------------------PACKAGE INSTALATIONs-----------------------------------------------
 >Install-Package EntityFramework -Version 5.0.0  --instalacjak pakietu entity framework w wersji 5.0.0 
 ----------------------------------------------------------------------------------------------------------------------
+
+
+Update-Package EntityFramework -Version 6.0.2 -- update pakietu wszystkie projekty 
+Update-Package EntityFramework -ProjectName AIronMan.Api -Version 6.0.2 
