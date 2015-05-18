@@ -45,24 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contract\IBlogRepository.cs" />
-    <Compile Include="Contract\ICategoryPortfolioRepository.cs" />
-    <Compile Include="Contract\ICommentRepository.cs" />
-    <Compile Include="Contract\ILangRepository.cs" />
-    <Compile Include="Contract\ILayoutRepository.cs" />
-    <Compile Include="Contract\IPageRepository.cs" />
-    <Compile Include="Contract\IPageTemplateRepository.cs" />
-    <Compile Include="Contract\IPortfolioHeaderRepository.cs" />
-    <Compile Include="Contract\IPortfolioNodeRepository.cs" />
-    <Compile Include="Contract\IPostRepository.cs" />
-    <Compile Include="Contract\IRepository.cs" />
-    <Compile Include="Contract\ISettingRepository.cs" />
-    <Compile Include="Contract\ISiteRepository.cs" />
-    <Compile Include="Contract\ISliderHeaderReposiotry.cs" />
-    <Compile Include="Contract\ISliderStepRepository.cs" />
-    <Compile Include="Contract\ITagRepository.cs" />
-    <Compile Include="Contract\IUnitOfWork.cs" />
-    <Compile Include="Contract\IUserRepository.cs" />
     <Compile Include="DB.cs" />
     <Compile Include="Migrations\201504170935467_InitialCreate.cs" />
     <Compile Include="Migrations\201504170935467_InitialCreate.Designer.cs">
@@ -70,24 +52,6 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\BlogRepository.cs" />
-    <Compile Include="Repository\CategoryPortfolioRepository.cs" />
-    <Compile Include="Repository\CommentRepository.cs" />
-    <Compile Include="Repository\LangRepository.cs" />
-    <Compile Include="Repository\LayoutRepository.cs" />
-    <Compile Include="Repository\PageRepository.cs" />
-    <Compile Include="Repository\PageTemplateRepository.cs" />
-    <Compile Include="Repository\PortfolioHeaderRepository.cs" />
-    <Compile Include="Repository\PortfolioNodeRepository.cs" />
-    <Compile Include="Repository\PostRepository.cs" />
-    <Compile Include="Repository\Repository.cs" />
-    <Compile Include="Repository\SettingRepository.cs" />
-    <Compile Include="Repository\SiteRepository.cs" />
-    <Compile Include="Repository\SliderHeaderRepository.cs" />
-    <Compile Include="Repository\SliderStepRepository.cs" />
-    <Compile Include="Repository\TagRepository.cs" />
-    <Compile Include="Repository\UserRepository.cs" />
-    <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

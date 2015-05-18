@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{55D6F6F8-F2F0-4F7E-AD56-F2BF07C8CBBC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AIronMan.Repository</RootNamespace>
+    <AssemblyName>AIronMan.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contract\IBlogRepository.cs" />
+    <Compile Include="Contract\ICategoryPortfolioRepository.cs" />
+    <Compile Include="Contract\ICommentRepository.cs" />
+    <Compile Include="Contract\ILangRepository.cs" />
+    <Compile Include="Contract\ILayoutRepository.cs" />
+    <Compile Include="Contract\IPageRepository.cs" />
+    <Compile Include="Contract\IPageTemplateRepository.cs" />
+    <Compile Include="Contract\IPortfolioHeaderRepository.cs" />
+    <Compile Include="Contract\IPortfolioNodeRepository.cs" />
+    <Compile Include="Contract\IPostRepository.cs" />
+    <Compile Include="Contract\IRepository.cs" />
+    <Compile Include="Contract\ISettingRepository.cs" />
+    <Compile Include="Contract\ISiteRepository.cs" />
+    <Compile Include="Contract\ISliderHeaderReposiotry.cs" />
+    <Compile Include="Contract\ISliderStepRepository.cs" />
+    <Compile Include="Contract\ITagRepository.cs" />
+    <Compile Include="Contract\IUnitOfWork.cs" />
+    <Compile Include="Contract\IUserRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\BlogRepository.cs" />
+    <Compile Include="Repository\CategoryPortfolioRepository.cs" />
+    <Compile Include="Repository\CommentRepository.cs" />
+    <Compile Include="Repository\LangRepository.cs" />
+    <Compile Include="Repository\LayoutRepository.cs" />
+    <Compile Include="Repository\PageRepository.cs" />
+    <Compile Include="Repository\PageTemplateRepository.cs" />
+    <Compile Include="Repository\PortfolioHeaderRepository.cs" />
+    <Compile Include="Repository\PortfolioNodeRepository.cs" />
+    <Compile Include="Repository\PostRepository.cs" />
+    <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\SettingRepository.cs" />
+    <Compile Include="Repository\SiteRepository.cs" />
+    <Compile Include="Repository\SliderHeaderRepository.cs" />
+    <Compile Include="Repository\SliderStepRepository.cs" />
+    <Compile Include="Repository\TagRepository.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
+    <Compile Include="UnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AIronMan.DataSource\AIronMan.DataSource.csproj">
+      <Project>{9b1190c8-d663-4400-ba21-b70f89e9c9be}</Project>
+      <Name>AIronMan.DataSource</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AIronMan.Domain\AIronMan.Domain.csproj">
+      <Project>{71ab38b8-a6dd-4d40-869c-e9176ab36033}</Project>
+      <Name>AIronMan.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
