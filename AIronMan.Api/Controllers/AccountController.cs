@@ -75,7 +75,7 @@ namespace AIronMan.Api.Controllers
         [HttpGet]
         public IHttpActionResult WarmUp()
         {
-            var users = userServices.GetUser();
+            var users = userServices.GetUser().ToList();
             return this.Ok(new { sucess = true, data = users });
         }
     }

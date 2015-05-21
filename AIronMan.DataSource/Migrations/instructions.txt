@@ -13,3 +13,10 @@
 
 Update-Package EntityFramework -Version 6.0.2 -- update pakietu wszystkie projekty 
 Update-Package EntityFramework -ProjectName AIronMan.Api -Version 6.0.2 
+
+
+------------------------------------------------------------postgres running----------------------------------------------
+Update-Package EntityFramework -Version 6.0.2 
+Install-Package Npgsql
+Install-Package Npgsql.EntityFramework
+----------------------------------------------------------------------------------------------------------------------
