@@ -58,7 +58,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DbConfig\Contract\IDbConfig.cs" />
     <Compile Include="DB.cs" />
+    <Compile Include="DbConfig\DbConfigFactory.cs" />
+    <Compile Include="DbConfig\MssqlConfig.cs" />
+    <Compile Include="DbConfig\PostgresqlConfig.cs" />
     <Compile Include="Migrations\201504170935467_InitialCreate.cs" />
     <Compile Include="Migrations\201504170935467_InitialCreate.Designer.cs">
       <DependentUpon>201504170935467_InitialCreate.cs</DependentUpon>

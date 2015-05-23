@@ -2,13 +2,35 @@
     <section class="matter">
         <div class="container">
             <div class="row">
-                <div class="widget wviolet">
-                    <div data-cc-widget-header title="{{vm.title}}"></div>
-                    <div class="widget-content user">
-                        <h3>TODO: Implement Your Features</h3>
-                    </div>
-                    <div class="widget-foot">
-                        <div class="clearfix"></div>
+                <div class="col-md-6">
+                    <div class="widget wviolet">
+                        <div data-cc-widget-header title="{{vm.title}}"
+                             allow-collapse="true"></div>
+                        <div class="widget-content user">
+                            <table class="table table-condensed table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Name</th>
+                                        <th>Url</th>
+                                        <th>Folder Path</th>
+                                        <th>Theme Localization</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-ng-repeat="p in vm.sites">
+                                        <td>{{p.Id}}</td>
+                                        <td>{{p.Name}}</td>
+                                        <td>{{p.Url}}</td>
+                                        <td>{{p.FolderPath}}</td>
+                                        <td>{{p.ThemeLocalization}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="widget-foot">
+                            <div class="clearfix"></div>
+                        </div>
                     </div>
                 </div>
             </div>

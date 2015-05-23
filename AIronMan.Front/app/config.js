@@ -2,7 +2,7 @@
     'use strict';
 
     var app = angular.module('app.ironman');
-
+    
     // Configure Toastr
     toastr.options.timeOut = 4000;
     toastr.options.positionClass = 'toast-bottom-right';

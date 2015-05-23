@@ -44,7 +44,7 @@
         });
 
         // register listener to watch route changes
-        $rootScope.$on("$locationChangeStart", function (event, next, current) {
+        $rootScope.$on("$locationChangeSuccess ", function (event, next, current) {
             if (!authService.authentication.isAuth) {
                 // no logged user, we should be going to #login
                 if (next.templateUrl == "app/authentication/views/login.html") {

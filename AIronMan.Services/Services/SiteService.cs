@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Configuration;
+using System.Threading.Tasks;
+
 using AIronMan.Repository;
 using AIronMan.Logging;
 using AIronMan.Services.Providers;
@@ -28,16 +31,16 @@ namespace AIronMan.Services
             if (site == null)
             {
                 Guid id = GetCurrentSiteId();
-                site = Get().First(m => m.Id == id);
+                site = Context.SiteRepository.All().First(m => m.Id == id);
 
                 Cache.Set("site", site, 30);
             }
             return site;
         }
 
-        public IQueryable<Domain.Site> Get()
+        public async Task<IEnumerable<Domain.Site>> Get()
         {
-            return Context.SiteRepository.All().OrderByDescending(m => m.LmDate);
+            return await Context.SiteRepository.All().OrderByDescending(m => m.LmDate).ToListAsync();
         }
 
         public Domain.Site Create(string name, string url, string folderPath, String themeLocalization, bool isActive, ref ErrorCode.SiteServiceStatus status)
